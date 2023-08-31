@@ -1,0 +1,748 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap');
+
+/* root element */
+*{
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    /*  */
+}
+body{
+    background-color: var(--bg-color);
+
+}
+
+h1{
+    font-size: 4rem;
+    color: white;
+}
+
+h2{
+    font-size: 3rem;
+    color: white;
+}
+
+h4{
+    font-size: 2.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h4 span{
+    color: var(--text-color);
+
+}
+
+:root{
+    --bg-color: #3C3B3B; 
+    --text-color : #F05E44;
+    --root-color : #EA330B;
+    --transition: all 400ms ease
+}
+
+.container{
+    margin: 0 6%;
+}
+
+.btn{
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    padding: .5rem 2rem;
+    border-radius: 5px;
+    border: 1px solid var(--root-color);
+}
+
+.btn:hover{
+    background-color: var(--root-color);
+    transition: var(--transition);
+}
+
+.btn-primary{
+    font-weight: 600;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    border: 1px solid var(--root-color);
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.btn-primary:hover{
+    background-color: var(--root-color);
+}
+
+
+
+/* root element end */
+
+/* nav start */
+
+#open-menu,
+#close-menu{
+    border: none;
+}
+
+
+nav{
+    background: transparent;
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    top: 0;
+    z-index: 11;
+}
+
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button{
+    display: none;
+}
+
+.nav-container a{
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-link{
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link a{
+    font-size: 1rem;
+    color: white;
+    transition: var(--transition);
+}
+
+.nav-link a:hover{
+    color: #1f2641;
+}
+
+.window-scroll{
+    background-color: var(--text-color);
+}
+
+
+nav span{
+    color: var(--text-color);
+}
+
+/* nav end */
+
+/* body start */
+header{
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(/img/me.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 50%;
+}
+
+.auto-typed{
+    color: var(--text-color);
+}
+
+.title h2{
+    margin-bottom: 2rem;
+}
+
+/* body end */
+
+/* service start */
+.service{
+    margin-top: 5rem;
+}
+
+.service-body{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.service-left img{
+    width: 80%;
+    border: 1rem solid var(--root-color);
+    border-radius: 50%;
+}
+
+.service-left{
+    justify-self: center;
+    align-self: center;
+}
+
+.service-right{
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.service-detail p{
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 2rem;
+
+}
+
+.service-detail h5{
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+    color: var(--text-color);
+}
+
+.service-detail a{
+    margin-top: 1.5rem;
+}
+/* service end */
+
+
+/* skill start */
+.my-skills{
+    margin-bottom: 2rem;
+
+}
+
+.skill-bar{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    padding: 25px 30px;
+}
+
+.skill-bar .bar{
+    margin: 20px 0;
+}
+
+.skill-bar .bar:first-child{
+    margin: 0px;
+}
+
+.skill-bar .bar .info span{
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    opacity: 0;
+    animation: showText 0.5 1s linear forwards;
+}
+
+@keyframes showText{
+    100%{
+        opacity: 1;
+    }
+    
+}
+
+.skill-bar .bar .progress-bar{
+    position: relative;
+    height: 10px;
+    width: 600px;
+    background-color: #737a75;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+.skill-bar .bar .progress-bar span{
+    height: 100%;
+    width: 80%;
+    background-color: var(--text-color);
+    position: absolute;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transform-origin: left;
+    animation: animate 1s 1s cubic-bezier(1,0,0.5,1) forwards;
+}
+
+@keyframes animate{
+    100%{
+        transform: scaleX(1);
+    }
+}
+
+.skill-bar .bar .info{
+    margin-bottom: 7px;
+}
+
+.skill-bar .bar .progress-bar span::before{
+    position: absolute;
+    content: "";
+    top: -10px;
+    right: 0;
+    height: 0;
+    width: 0;
+    border: 7px solid transparent;
+    border-bottom-width: 0;
+    border-right-width: 0;
+    border-top-color: var(--text-color);
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+.skill-bar .bar .progress-bar.html span{
+    width: 90%;
+ }
+ 
+ .skill-bar .bar .progress-bar.css span{
+    width: 85%;
+ }
+ 
+ .skill-bar .bar .progress-bar.bootstrap span{
+    width: 90%;
+ }
+ 
+ .skill-bar .bar .progress-bar.javascript span{
+    width: 75%;
+ }
+ 
+ .skill-bar .bar .progress-bar.python span{
+    width: 55%;
+ }
+
+.skill-bar .bar .progress-bar span::after{
+    position: absolute;
+    top: -25px;
+    right: 0;
+    color: white;
+    background: var(--text-color);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 1px 8px;
+    opacity: 0;
+    border-radius: 3px;
+    animation: showText2 0.5s 1.5s linear forwards;
+}
+
+@keyframes showText2 {
+    100%{
+        opacity: 1;
+    }
+   
+    
+}
+
+.skill-bar .bar .progress-bar.html span::after{
+   content: "90%";
+}
+
+.skill-bar .bar .progress-bar.css span::after{
+    content: "85%";
+}
+
+.skill-bar .bar .progress-bar.bootstrap span::after{
+    content: "90%";
+}
+
+.skill-bar .bar .progress-bar.javascript span::after{
+    content: "75%";
+}
+
+.skill-bar .bar .progress-bar.python span::after{
+    content: "55%";
+}
+/* skill end */
+
+/* project section */
+.project{
+    margin-top: 2rem;
+}
+
+
+.my-projects{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px,1fr));
+    gap: 2rem;
+    justify-self: center;
+}
+
+.project-img{
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.project-img img{
+    width: 100%;
+    display: block;
+    transition: .5s;
+}
+
+.project-info{
+    text-align: center;
+}
+
+.project-info p{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.project-img img:hover{
+    transform: scale(1.3);
+}
+/* project section end */
+.about{
+    margin-top: 4rem;
+}
+
+.about-me{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap : 1.4rem;
+    align-items: center;
+}
+
+
+
+.about-left img{
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    border: 1rem solid var(--root-color);
+}
+
+.about-right p{
+    font-size: 1.8rem;
+    text-align: justify;
+    color: white;
+    line-height: 1.5;
+}
+
+.fa-html5{
+    color: 	#e34c26;
+}
+
+.fa-css3-alt{
+    color: #2965f1;
+}
+
+.fa-bootstrap{
+    color: 	rgb(86, 61, 124);
+}
+
+.fa-js{
+    color: RGB(240, 219, 79);
+}
+
+/* about section */
+
+.contact-with-me{
+    position: relative;
+    min-height: 50vh;
+    padding: 10px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+}
+
+.contact-with-me .contact-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-with-me .contact-info .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+
+.contact-with-me .contact-info .box .icon{
+    min-width: 60px;
+    height: 60px;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 22px;
+}
+
+.contact-with-me .contact-info .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 16px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.contact-with-me .contact-info .box .text h3{
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.massage{
+    width: 40%;
+    padding: 40px;
+    background: #fff;
+}
+
+.massage h3{
+    font-size: 30px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.massage .inputBox{
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.massage .inputBox input,
+.massage .inputBox textarea{
+    width: 100%;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid var(--root-color);
+    outline: none;
+    resize: none;
+}
+
+.massage .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 5px 0;
+    font-size: 16px;
+    margin: 10px 0;
+    pointer-events: none;
+    transition: 0.5s;
+    color: #666;
+}
+
+.massage .inputBox input:focus ~ span,
+.massage .inputBox input:valid ~ span,
+.massage .inputBox textarea:focus ~ span,
+.massage .inputBox textarea:valid ~ span
+{
+    color: var(--root-color);
+    font-size: 12px;
+    transform: translateY(-20px);
+}
+
+.massage .inputBox input[type="submit"]{
+    width: 100px;
+    background: var(--root-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+}
+
+@media screen and (max-width : 1024px) {
+
+    h2{
+        font-size: 2rem;
+        color: white;
+    }
+    /* navigation start */
+    nav{
+        position: fixed;
+    }
+    nav button{
+        display: inline-block;
+        background: transparent;
+        font-size: 1.8rem;
+        color: white;
+        cursor: pointer;
+    }
+
+    nav button#close-menu{
+        display: none;
+    }
+
+    .nav-link{
+        position: fixed;
+        top: 5rem;
+        right: 5%;
+        height: fit-content;
+        width: 18rem;
+        flex-direction: column;
+        gap: 0;
+        display: none;
+    }
+
+    .nav-link li{
+        width: 100%;
+        height: 5rem;
+        animation: animationNavItem 250ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+    
+    .nav_link li:nth-child(2){
+        animation-delay: 150ms;
+    }
+
+    .nav_link li:nth-child(3){
+        animation-delay: 250ms;
+    }
+
+    .nav_link li:nth-child(4){
+        animation-delay: 350ms;
+    }
+
+    .nav_link li:nth-child(5){
+        animation-delay: 450ms;
+    }
+
+    .nav_link li:nth-child(6){
+        animation-delay: 550ms;
+    }
+
+    .nav-link li a{
+        background: var(--text-color);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+
+    .nav-link li a:hover{
+        background: var(--text-color);
+        color: white;
+    }
+
+    @keyframes animationNavItem {
+        0%{
+            transform: rotateZ(-90deg) rotateX(90deg) scale(0.1);
+        }
+
+        100%{
+            transform: rotateZ(0),rotateX(0) scale(1);
+            opacity: 1;
+        }
+        
+    }
+    /* navigation end */
+
+    .service-body{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        justify-self: center;
+    }
+
+    .service-left img{
+        margin-left: 3rem;
+    }
+
+    .service-right{
+        margin-bottom: 2rem;
+    }
+
+    .about-me{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+    }
+
+    .about-left img{
+        margin-left: 3rem;
+    }
+
+    .about-right{
+        margin-bottom: 2rem;
+    }
+
+    .contact-with-me{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .massage{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+
+    h1{
+        font-size: 2rem;
+        color: white;
+    }
+    
+    h2{
+        font-size: 2rem;
+    }
+
+    btn{
+        font-size: 1rem;
+        padding: .5rem 1.5rem;
+    }
+    
+    .nav-link li a{
+        width: 85%;
+    }
+
+    .skill-bar .bar .progress-bar {
+        width: 300px;
+    }
+
+    .service-left img {
+        margin-left: 1rem;
+    }
+
+    h4 {
+        font-size: 1.5rem;
+    }
+
+    .service-detail h5 {
+        font-size: 1.5rem;
+    }
+
+    .project-info p {
+        font-size: .5rem;
+    }
+
+    .project-img img {
+        width: 90%;
+    }
+
+    .about-left img {
+        margin-left: 1rem;
+    }
+
+    .about-right p {
+        font-size: 1rem;
+    }
+
+    .contact-with-me{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        /* flex-direction: column; */
+    }
+
+    .massage{
+        width: 100%;
+    }
+
+
+    
+}
+
+
